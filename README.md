@@ -16,7 +16,6 @@ Although Stage 2 is a continuation of the Stage 1 application, there is consider
 * Other Implementation Guide Requirements
 * Movie DB Requirements
 * Naming Conventions
-* Known Issues
 * Screenshots
 * Class Diagrams
 #### Stage 1 Requirements:
@@ -60,23 +59,6 @@ App conforms to common standards found in the Android Nanodegree General Project
 #### Naming Conventions
 * Where applicable, Package/Directory names in the framework reflect the superclass package name in Android (or Java). For example: The AsyncTaskLoaderParcelables class extends AsyncTaskLoader. AsyncTaskLoader is located in the android.content package, therefore the AsyncTaskLoaderParcelables is contained in the com.paulmender.android.content package.
 * During phase one of the Popular Movies implementation the m (member) and s (private static) prefixes for fields were used based on conventions observed in example code, and the Android Open Source Project (AOSP) http://s.android.com/source/code-style.html#follow-field-naming-conventions. Although there are still some examples in the Popular Movies code that follow the convention, the majority of the code now adheres to the Google style guide https://google.github.io/styleguide/javaguide.html#s5.1-identifier-names, which shuns the prefixes.
-#### Known Issues
-After playing a video from the video list, this error message is logged in the Logcat:
-
-    E/ActivityThread: Activity com.google.android.youtube.api.StandalonePlayerActivity has leaked 
-    IntentReceiver aalm@7e6e2ae that was originally registered here. 
-    Are you missing a call to unregisterReceiver()?
-    
-Note: After creating a standalone activity (see MovieVideoActivity.java), the error changed to 
-    java.lang.IllegalArgumentException:
-    Service Intent must be explicit: Intent
-    { act=com.google.android.youtube.api.StandalonePlayerActivity.START (has extras)   
-    
-I researched the issues and found references, but none of the solutions offered solved the issue.:
-    https://stackoverflow.com/questions/47501857/intentreceiverleaked-youtubestandaloneplayer
-    https://stackoverflow.com/questions/35678972/error-youtubeservice-has-leaked-intentreceiver-are-you-missing-a-call-to-un
- 
-Tried targetSdkVersion 16 and 20 to correct the YouTubePlayer Error, but the project would not compile.
 ### Screenshots
 The screenshots were generated with the Android Debug Bridge through the capture button on the Logcat, then resized in Windows Paint.
 1. Detail with Reviews
