@@ -1,0 +1,28 @@
+<resources>
+
+    <dimen name="elevation_default">4dp</dimen>
+
+    <dimen name="layout_margin">16dp</dimen>
+    <dimen name="layout_margin_top">8dp</dimen>
+
+    <!-- Set grid column width integer to match the movie_poster_image_width above.
+    160 works well for my phone.
+    COMPLETED (unnecessary): Determine how to automate this value to fit the grid on different resolutions.
+    -->
+    <integer name="movie_poster_grid_column_width_vertical_mode">160</integer>
+
+    <dimen name="padding_default">8dp</dimen>
+    <dimen name="padding_default_large">12dp</dimen>
+    <dimen name="padding_default_small">2dp</dimen>
+
+    <dimen name="progress_bar_height">42dp</dimen>
+    <dimen name="progress_bar_width">42dp</dimen>
+
+    <dimen name="text_error_message_large">20sp</dimen>
+    <dimen name="text_movie_title_size">30sp</dimen>
+    <dimen name="text_movie_title_size_small">20sp</dimen>
+
+    <dimen name="tab_text_with_icons_height">72dp</dimen>
+    <dimen name="tab_text_with_icons_padding_under_text">16dp</dimen>
+
+</resources>

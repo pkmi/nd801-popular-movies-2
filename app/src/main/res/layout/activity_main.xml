@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:background="@color/colorBackground"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.design.widget.TabLayout
+        style="@style/PkmTabLayout"
+        android:id="@+id/tl_activity_main"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/tab_text_with_icons_height">
+
+        <android.support.design.widget.TabItem
+            style="@style/PkmTabItem"
+            android:id="@+id/ti_activity_main_popular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/tab_text_with_icons_padding_under_text"
+            android:icon="@drawable/ic_star_orange"
+            android:text="@string/tab_text_popular"
+            tools:text="@string/tab_text_popular" />
+
+        <android.support.design.widget.TabItem
+            style="@style/PkmTabItem"
+            android:id="@+id/ti_activity_main_top_rated"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:icon="@drawable/ic_thumb_up_orange"
+            android:text="@string/tab_text_top_rated"
+            tools:text="@string/tab_text_top_rated" />
+
+        <android.support.design.widget.TabItem
+            style="@style/PkmTabItem"
+            android:id="@+id/ti_activity_main_favorites"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:icon="@drawable/ic_favorite_orange"
+            android:text="@string/tab_text_favorites" />
+
+    </android.support.design.widget.TabLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_activity_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/tab_text_with_icons_height"
+        android:background="@color/colorBackground" />
+
+    <TextView
+        android:id="@+id/tv_activity_main_error"
+        style="@style/PkmErrorMessage" />
+
+    <ProgressBar
+        android:id="@+id/pb_activity_main"
+        style="@style/PkmProgressBar" />
+</FrameLayout>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Custom color names used in the app. -->
+    <color name="colorTabItemBackground">@color/tabColorBackground</color>
+
+    <!-- These color names are based on the export from Color Tool https://material.io/color;
+     with the "material" prefix added. -->
+    <color name="materialPrimaryColor">#1d1d1e</color>
+    <color name="materialPrimaryLightColor">#6746c3</color>
+    <color name="materialPrimaryDarkColor">#000000</color>
+    <color name="materialSecondaryColor">#fdd835</color>
+    <color name="materialSecondaryLightColor"
+        tools:keep="@color/materialSecondaryLightColor">#ffff6b</color>
+    <color name="materialSecondaryDarkColor">#c6a700</color>
+    <color name="materialPrimaryTextColor">#ffee58</color>
+    <color name="materialSecondaryTextColor">#4a148c</color>
+
+    <!-- Experimenting with color. -->
+    <!--<color name="materialPrimaryColor">#311b92</color>-->
+    <!--<color name="materialPrimaryLightColor">#000000</color>-->
+    <!--<color name="materialPrimaryDarkColor">#311b92</color>-->
+    <!--<color name="materialSecondaryColor">#fdd835</color>-->
+    <!--<color name="materialSecondaryLightColor">#ffff6b</color>-->
+    <!--<color name="materialSecondaryDarkColor">#c6a700</color>-->
+    <!--<color name="materialPrimaryTextColor">#ffee58</color>-->
+    <!--<color name="materialSecondaryTextColor">#4a148c</color>-->
+
+    <!-- These color names are based on Theme.AppCompat.Light.DarkActionBar attributes
+         and are mapped to Material.io Color Tool color names above. -->
+    <color name="colorAccent">@color/materialSecondaryColor</color>
+    <color name="colorAccentLight"
+        tools:keep="@color/colorAccentLight">@color/materialSecondaryLightColor</color>
+
+    <color name="colorPrimary">@color/materialPrimaryColor</color>
+    <color name="colorPrimaryDark">@color/materialPrimaryDarkColor</color>
+
+    <color name="colorBackground">@android:color/background_dark</color>
+    <color name="colorForeground">@android:color/background_light</color>
+
+    <color name="iconColor" tools:keep="@color/iconColor">#FF853D</color>
+
+    <color name="navigationBarColor">@color/materialPrimaryDarkColor</color>
+    <color name="statusBarColor">@color/materialPrimaryDarkColor</color>
+
+    <color name="tabColorBackground">@color/materialPrimaryLightColor</color>
+    <color name="textColorPrimary">@color/materialPrimaryTextColor</color>
+    <color name="textColorPrimaryInverse">@color/materialSecondaryTextColor</color>
+    <color name="textColorSecondary">@color/materialSecondaryTextColor</color>
+    <color name="textColorSecondaryInverse">@color/materialPrimaryTextColor</color>
+    <color name="windowBackground">@android:color/background_light</color>
+
+</resources>

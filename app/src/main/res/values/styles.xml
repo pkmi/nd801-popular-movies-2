@@ -1,0 +1,164 @@
+<resources
+    xmlns:android="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+
+        <!-- Customize parent theme attributes. -->
+
+        <item name="colorButtonNormal">@color/colorPrimary</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:colorBackground">@color/colorBackground</item>
+        <item name="android:colorForeground">@color/colorForeground</item>
+
+        <item name="android:textColorPrimary">@color/textColorPrimary</item>
+        <item name="android:textColorPrimaryInverse">@color/textColorPrimaryInverse</item>
+        <item name="android:textColorSecondary">@color/textColorSecondary</item>
+        <item name="android:textColorSecondaryInverse">@color/textColorSecondaryInverse</item>
+
+        <item name="android:windowBackground">@color/windowBackground</item>
+
+        <item name="android:navigationBarColor">@color/navigationBarColor</item>
+        <item name="android:statusBarColor">@color/statusBarColor</item>
+
+    </style>
+
+    <!-- Divider -->
+    <!-- Reference:
+            toddles_fp https://stackoverflow.com/questions/5049852/
+            android-drawing-separator-divider-line-in-layout -->
+
+    <style name="PkmMovieFavoriteButton">
+        <item name="android:elevation">@dimen/elevation_default</item>
+        <item name="android:drawableTop">@drawable/ic_favorite_orange</item>
+        <item name="android:drawablePadding">@dimen/padding_default_small</item>
+        <item name="android:contentDescription">@string/mark_as_favorite</item>
+        <item name="android:background">@drawable/image_button_touch_selector</item>
+        <item name="android:padding">@dimen/padding_default_small</item>
+        <item name="android:focusableInTouchMode">true</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/layout_margin_top</item>
+        <item name="android:text">@string/mark_as_not_favorite</item>
+        <item name="android:visibility">visible</item>
+    </style>
+
+    <style name="PkmEmptyMovieExtraList" parent="PkmTextHeading1">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">@dimen/layout_margin</item>
+        <item name="android:padding">@dimen/padding_default</item>
+        <item name="android:layout_gravity">fill_horizontal</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:visibility">invisible</item>
+        tools:text="empty message"
+    </style>
+
+    <style name="PkmErrorMessage">
+        <item name="android:textSize">@dimen/text_error_message_large</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">16dp</item>
+        <item name="android:layout_gravity">bottom|center_horizontal</item>
+        <item name="android:text">@string/error_message_no_query_results</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textAppearance">
+            @android:style/TextAppearance.Material.Notification.Emphasis</item>
+        <item name="android:visibility">invisible</item>
+        <item name="android:background">@color/colorAccent</item>
+        tools:text="error message"
+    </style>
+
+    <style name="PkmListDivider">
+        <item name="android:background">@color/colorAccent</item>
+        <item name="android:elevation">2dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+    </style>
+
+    <style name="PkmProgressBar">
+        <item name="android:layout_height">42dp</item>
+        <item name="android:layout_width">42dp</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:visibility">invisible</item>
+    </style>
+
+    <style name="PkmTabItem">
+        <item name="android:background">@color/colorTabItemBackground</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="PkmTabLayout">
+        <item name="android:background">@color/colorTabItemBackground</item>
+        <item name="android:layout_gravity">fill_horizontal|center_horizontal</item>
+        <item name="tabMode">fixed</item>
+        <item name="tabTextColor">@color/materialSecondaryDarkColor</item>
+        <item name="tabGravity">fill</item>
+    </style>
+
+    <style name="PkmTextBody">
+        <item name="android:layout_marginStart">@dimen/layout_margin</item>
+        <item name="android:layout_marginLeft">@dimen/layout_margin</item>
+        <item name="android:layout_marginEnd">@dimen/layout_margin</item>
+        <item name="android:layout_marginRight">@dimen/layout_margin</item>
+        <item name="android:layout_marginTop">@dimen/layout_margin_top</item>
+        <item name="android:textAppearance">@android:style/TextAppearance.Material.Body2</item>
+        <item name="android:textColor">@color/materialPrimaryTextColor</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+        <item name="android:textSize">16sp</item>"
+    </style>
+
+    <style name="PkmTextBodyInverse" parent="PkmTextBody">
+        <item name="android:background">@color/colorPrimaryDark</item>
+    </style>
+
+    <style name="PkmTextHeading">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/materialPrimaryTextColor</item>
+        <item name="android:paddingStart">@dimen/padding_default</item>
+        <item name="android:paddingEnd">@dimen/padding_default</item>
+        <item name="android:textAppearance">@android:style/TextAppearance.Material.Medium.Inverse</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="PkmTextHeading1" parent="PkmTextHeading">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">italic</item>
+    </style>
+
+    <style name="PkmTextHeading2" parent="PkmTextHeading">
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="PkmTextLabel">
+        <item name="android:textAppearance">@android:style/TextAppearance.Material.Small</item>
+    </style>
+
+    <style name="PkmTextLabelInverse" parent="PkmTextLabel">
+        <item name="android:textAppearance">@android:style/TextAppearance.Material.Small.Inverse</item>
+    </style>
+
+    <style name="PkmTextMovieDetailTitle" parent="@android:style/Widget.TextView">
+        <item name="android:background">@color/materialPrimaryLightColor</item>
+        <item name="android:elevation">@dimen/elevation_default</item>
+        <item name="android:focusable">true</item>
+        <item name="android:focusableInTouchMode">true</item>
+        <item name="android:fontFamily">sans-serif-thin</item>
+        <item name="android:layout_marginTop">-5dp</item>
+        <item name="android:layout_marginBottom">@dimen/padding_default</item>
+        <item name="android:padding">@dimen/padding_default</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">@color/materialPrimaryTextColor</item>
+        <item name="android:textSize">@dimen/text_movie_title_size</item>
+    </style>
+
+    <style name="PkmTextMovieExtraTitle" parent="PkmTextMovieDetailTitle">
+        <item name="android:layout_marginTop">0dp</item>
+        <item name="android:padding">@dimen/padding_default_small</item>
+        <item name="android:textSize">@dimen/text_movie_title_size_small</item>
+    </style>
+
+</resources>

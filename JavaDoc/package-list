@@ -1,0 +1,14 @@
+com.paulmender.android.app.fragment.extensions
+com.paulmender.android.content
+com.paulmender.android.support.v4.app
+com.paulmender.android.support.v7.app.appcompatactivity.extensions
+com.paulmender.android.widget
+com.paulmender.udacity.popularmovies
+com.paulmender.udacity.popularmovies.app
+com.paulmender.udacity.popularmovies.app.service
+com.paulmender.udacity.popularmovies.content
+com.paulmender.udacity.popularmovies.content.contentprovider
+com.paulmender.udacity.popularmovies.data
+com.paulmender.udacity.popularmovies.utility
+com.paulmender.udacity.popularmovies.widget
+com.paulmender.utility

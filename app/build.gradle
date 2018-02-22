@@ -1,0 +1,154 @@
+apply plugin: 'com.android.application'
+
+android {
+
+    // PKM 20171114 Update to 26
+    // PKM 20171125 Update to 27 to attempt to correct multidex error.
+    //     Note: Fixed by removing picasso-2.5.2.jar from app/libs folder.
+    // PKM 20171214 Try 16 to correct YouTubePlayer Error, did not compile.
+    compileSdkVersion 27
+
+    // PKM 20171114 Added
+    buildToolsVersion "27.0.1"
+
+    defaultConfig {
+        applicationId "com.paulmender.udacity.popularmovies"
+
+        // PKM 20171214 Updated from 16 to 21.
+        minSdkVersion 21
+
+        // PKM 20171125 Updated to 27 to attempt to correct multidex error.
+        // PKM 20171213 Updated to 20, back to 27
+        //      Need to set targeted Sdk Version to less than 21 to avoid bug in YouTubeVideoPlayer?
+        //      From com.examples.youtubeapidemo:
+        //      <uses-sdk android:minSdkVersion="8" android:targetSdkVersion="16"/>
+        //      Error result at 20: Service com.google.android.youtube.api.service.YouTubeService
+        //      has leaked IntentReceiver ubi@1fa3bfce that was originally registered here.
+        //      Are you missing a call to unregisterReceiver()?
+        // PKM 20171214 Try 16 and 20 to correct YouTubePlayer Error. Did not compile.
+        targetSdkVersion 27
+
+        // PKM 20180209 Set version code and name.
+        // Format: 2112200 where
+        //     21 is API Level minimum (e.g. 21),
+        //     12 is Screen size minimum and maximum (e.g., 1 small, 2 normal, 3 large, 4 xlarge,
+        //     333 is app version (e.g., 2.00).
+        // References:
+        //  https://developer.android.com/google/play/publishing/multiple-apks.html#VersionCodes
+        versionCode 2112200
+        versionName "2.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        // PKM Added 20170915
+        // Reference:
+        //      https://richardroseblog.wordpress.com/2016/05/29/hiding-secret-api-keys-from-git/
+        buildConfigField("String", "MOVIE_DB_API_KEY", moviedb_api_key_v3)
+
+        // PKM Added 20171213
+        buildConfigField("String", "YOUTUBE_API_KEY", youtube_api_key_v3)
+
+        // PKM Added 20180209 for about dialog
+        // References:
+        //  1. https://stackoverflow.com/questions/3540739/
+        //      how-to-programmatically-read-the-date-when-my-android-apk-was-built
+        //      qwlice Sep 20 '17 at 13:53
+        //      fattire Mar 26 '14 at 1:06
+        buildConfigField "java.util.Date", "BUILD_DATE_TIME", "new java.util.Date()"
+
+        // PKM Attempt to correct not compiling after upgrade to multiDexEnabled true
+        // PKM Removed on 20171116 This line clashed with picasso-2.5.2.jar
+        //     when compiling API level 16.
+        // PKM 20171126 Note: Fixed by removing picasso-2.5.2.jar from app/libs folder.
+        // multiDexEnabled true
+    }
+    // PKM 20180221 Considerd shrinkResources true
+    // https://developer.android.com/studio/build/shrink-code.html
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    // PKM 20170817 Added.
+    repositories {
+        mavenCentral()
+    }
+
+    /// PKM 20171221 Added.
+    lintOptions {
+        baseline file("lint-baseline.xml")
+    }
+}
+
+dependencies {
+
+    //implementation 'com.android.support:support-compat:27.0.2'
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    }
+    )
+    // PKM Added 20180128 for ViewPager, deprecated
+    //compile 'com.android.support:support-v4:27.0.0'
+
+    // PKM Added 20170817
+    // compile 'com.android.support:appcompat-v7:25.3.1' // PKM Added - end
+    // PKM 20171113 Upgraded to v7:25.4.0
+    //compile 'com.android.support:appcompat-v7:25.4.0'
+    // PKM 20171114 Upgraded to v7:26.1.0
+    //compile 'com.android.support:appcompat-v7:26.1.0'
+    // PKM 20171125 Updated to 27 to attempt to correct multidex error.
+    compile 'com.android.support:appcompat-v7:27.0.2'
+
+    // PKM Added 20170906
+    //compile "com.android.support:gridlayout-v7:25.3.1" // PKM Added - end
+    // PKM 20171113 Upgraded to v7:25.4.0
+    //compile "com.android.support:gridlayout-v7:25.4.0"
+    // PKM 20171114 Upgraded to v7:26.1.0
+    //compile 'com.android.support:gridlayout-v7:26.1.0'
+    // PKM 20171125 Updated to 27 to attempt to correct multidex error.
+    compile 'com.android.support:gridlayout-v7:27.0.2'
+
+    // PKM 20171113
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+
+    // PKM 20171113 Upgraded to 25.4.0
+    // compile 'com.android.support:design:25.3.1'
+    //compile 'com.android.support:design:25.4.0'
+    // PKM 20171114 Upgraded to v7:26.1.0
+    //compile 'com.android.support:design:26.1.0'
+    // PKM 20171114 Upgraded to v7:27.0.1
+    compile 'com.android.support:design:27.0.2'
+
+    compile 'com.squareup.picasso:picasso:2.5.2'
+
+    // PKM 20171213 Added YouTubeAndroidPlayerApi.
+    compile files('libs/YouTubeAndroidPlayerApi.jar')
+
+    // PKM 20171224 Added butterknife.
+    compile 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+
+    // PKM 20171220 Added stetho.
+    compile 'com.facebook.stetho:stetho:1.5.0'
+    compile 'com.facebook.stetho:stetho-urlconnection:1.5.0'
+
+    testCompile 'junit:junit:4.12'
+
+    //PKM 20180122 Added.
+    dependencies {
+        compile 'com.google.code.gson:gson:2.8.2'
+    }
+
+    // PKM 20180112 Added per https://developers.google.com/youtube/v3/quickstart/android
+    // Deprecated.
+    //    compile 'com.google.android.gms:play-services-auth:10.2.1'
+    //    compile 'pub.devrel:easypermissions:0.3.0'
+    //    compile('com.google.api-client:google-api-client-android:1.23.0') {
+    //        exclude group: 'org.apache.httpcomponents'
+    //    }
+    //    compile('com.google.apis:google-api-services-youtube:v3-rev189-1.23.0') {
+    //        exclude group: 'org.apache.httpcomponents'
+    //    }
+
+
+}

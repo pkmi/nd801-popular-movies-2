@@ -1,0 +1,93 @@
+<!-- References
+    1. https://developer.android.com/guide/topics/resources/localization.html#managing-strings
+-->
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- *Application* -->
+    <string name="app_name">Popular Movies</string>
+
+    <!-- Content authority for content provider -->
+    <string name="content_authority">com.paulmender.udacity.popularmovies</string>
+
+    <!-- Error message strings -->
+    <string name="error_message_no_favorites">
+        No Favorites are available.&lt;br> Add your favorites in the &lt;b>%s&lt;/b> screen.</string>
+    <string name="error_message_no_query_results">
+        No movies are available.&lt;br> Please verify your internet connection.</string>
+    <string name="error_player">There was an error initializing the YouTubePlayer (%1$s)</string>
+
+    <!-- Debug message strings -->
+    <string name="pkmi_debug_no_url" tools:keep="@string/pkmi_debug_no_url">
+        pkmi debug: No query url parameter, nothing to fetch."</string>
+    <string name="pkmi_debug_print_stack_trace" tools:keep="@string/pkmi_debug_print_stack_trace">
+        pkmi debug: PKM stack trace"</string>
+
+    <!-- Dialog -->
+    <string name="dialog_button_cancel" tools:keep="@string/dialog_button_cancel">Cancel</string>
+    <string name="dialog_button_close">Close</string>
+    <string name="dialog_button_ok" tools:keep="@string/dialog_button_ok">OK</string>
+
+    <!-- *Main Activity* -->
+    <string name="dialog_about_copyright">Copyright &#169; 2018 Paul K. Mender</string>
+    <string name="dialog_about_header">
+        %s is a class project for the Udacity Android Developer Nanodegree.</string>
+    <string name="dialog_about_title">About</string>
+    <string name="dialog_about_version_info">Version: %s Code: %d</string>
+    <string name="dialog_about_build_date">Built on %s</string>
+    <string name="dialog_about_version_debug_suffix">d</string>
+
+    <string name="dialog_movie_db_logo_description">Powered by the MovieDB API</string>
+    <!-- contentDescription/accessibility strings -->
+    <string name="a11y_MoviePoster">movie poster</string>
+
+    <!-- Main Activity Tab Text -->
+    <string name="tab_text_favorites">Favorites</string>
+    <string name="tab_text_popular">Popular</string>
+    <string name="tab_text_top_rated">Top Rated</string>
+
+    <!-- Main Menu item titles -->
+    <string name="action_about">About</string> -->
+    <!-- Deprecated <string name="action_favorites">Favorites</string> -->
+    <!-- Deprecated <string name="action_settings">Settings</string> -->
+    <!-- Deprecated <string name="action_sort">Sort</string> -->
+
+    <!-- *Movie Detail Activity* -->
+
+    <string name="mark_as_favorite">Add</string>
+    <string name="mark_as_not_favorite">Remove</string>
+    <string name="added_to_favorites">%s added to Favorites</string>
+    <string name="added_to_favorites_failed">%s added to Favorites failed.</string>
+    <string name="removed_from_favorites">%s removed from Favorites.</string>
+    <string name="removed_from_favorites_failed">Remove from Favorites failed.</string>
+
+    <string name="movie_detail_release_label">Release Year</string>
+    <string name="movie_detail_runtime_label">Runtime</string>
+    <string name="movie_detail_vote_label">Vote Average</string>
+    <string name="movie_detail_title">Movie Details</string>
+
+    <string name="review_tab_text">Reviews</string>
+    <string name="video_tab_text">Videos</string>
+
+    <string name="vote_scale_suffix">/10</string>
+
+    <string name="runtime_format_string">"%s minutes"</string>
+
+    <!-- *Movie Review Activity * -->
+    <string name="movie_review_title">Movie Review</string>
+
+    <!-- *Movie Review Item * -->
+    <string name="movie_review_author_label">Author</string>
+
+    <!-- Review List Message -->
+    <string name="empty_movie_review_list">Reviews are unavailable</string>
+
+    <!-- *Movie Video Activity * -->
+    <string name="movie_video_title" tools:keep="@string/movie_video_title">Movie Video</string>
+
+    <!-- Movie Video -->
+    <string name="content_play_video">Play Video</string>
+
+    <!-- Video List  -->
+    <string name="empty_movie_video_list">Videos are unavailable</string>
+    <string name="movie_video_share_title">Share Video</string>
+
+</resources>
